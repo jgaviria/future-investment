@@ -1,0 +1,2 @@
+json.extract! property, :id, :address, :city, :state, :zip_code, :county, :owner_name, :auction_amount, :arv, :property_type, :number_of_bedrooms, :number_of_bathrooms, :home_sqr_footage, :property_sqr_footage, :found_by, :secondary_revision, :type_of_loan, :home_status, :notes, :agent, :review_by_date, :urgent, :possible_phone_numbers, :possible_address, :created_at, :updated_at
+json.url property_url(property, format: :json)

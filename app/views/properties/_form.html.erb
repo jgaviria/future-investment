@@ -1,0 +1,132 @@
+<%= form_with(model: property, local: true) do |form| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :county %>
+    <%= form.text_field :county %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_name %>
+    <%= form.text_field :owner_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auction_amount %>
+    <%= form.number_field :auction_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arv %>
+    <%= form.number_field :arv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_type %>
+    <%= form.text_field :property_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_bedrooms %>
+    <%= form.number_field :number_of_bedrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_bathrooms %>
+    <%= form.number_field :number_of_bathrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_sqr_footage %>
+    <%= form.number_field :home_sqr_footage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_sqr_footage %>
+    <%= form.number_field :property_sqr_footage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :found_by %>
+    <%= form.text_field :found_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secondary_revision %>
+    <%= form.text_field :secondary_revision %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_of_loan %>
+    <%= form.text_field :type_of_loan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_status %>
+    <%= form.text_field :home_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_field :notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent %>
+    <%= form.text_field :agent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review_by_date %>
+    <%= form.date_select :review_by_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :urgent %>
+    <%= form.check_box :urgent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :possible_phone_numbers %>
+    <%= form.text_field :possible_phone_numbers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :possible_address %>
+    <%= form.text_field :possible_address %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
