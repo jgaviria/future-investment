@@ -70,3 +70,6 @@ gem 'simple_form'
 
 # Adding bootstrap table :)
 gem 'bootstrap-table-rails'
+
+# Adding devise (user authorization gem)
+gem 'devise'
