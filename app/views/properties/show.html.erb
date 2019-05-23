@@ -1,119 +1,103 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+<div class="test">
+  <div class="card">
+    <div class="card-header">
+      Location Info
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Address:</h6>
+      <p class="card-text"><%= @property.address %></p>
+      <h6 class="card-title">City:</h6>
+      <p class="card-text"><%= @property.city %></p>
+      <h6 class="card-title">State:</h6>
+      <p class="card-text"><%= @property.state %></p>
+      <h6 class="card-title">Zip:</h6>
+      <p class="card-text"><%= @property.zip_code %></p>
+      <h6 class="card-title">County:</h6>
+      <p class="card-text"><%= @property.county %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @property.city %>
-</p>
 
-<p>
-  <strong>State:</strong>
-  <%= @property.state %>
-</p>
+<div class="test">
+  <div class="card">
+    <div class="card-header">
+      Auction Info
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Owner Name:</h6>
+      <p class="card-text"><%= @property.owner_name %></p>
+      <h6 class="card-title">Auction Amount:</h6>
+      <p class="card-text"><%= @property.auction_amount %></p>
+      <h6 class="card-title">After Repair Value:</h6>
+      <p class="card-text"><%= @property.arv %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Zip code:</strong>
-  <%= @property.zip_code %>
-</p>
+<div class="test">
+  <div class="card">
+    <div class="card-header">
+      House Features
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Property type:</h6>
+      <p class="card-text"><%= @property.property_type %></p>
+      <h6 class="card-title"># of Bedrooms:</h6>
+      <p class="card-text"><%= @property.number_of_bedrooms %></p>
+      <h6 class="card-title"># of bathrooms:</h6>
+      <p class="card-text"><%= @property.number_of_bathrooms %></p>
+      <h6 class="card-title">Home sqr footage:</h6>
+      <p class="card-text"><%= @property.home_sqr_footage %></p>
+      <h6 class="card-title">Property sqr footage:</h6>
+      <p class="card-text"><%= @property.property_sqr_footage %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>County:</strong>
-  <%= @property.county %>
-</p>
+</div>
 
-<p>
-  <strong>Owner name:</strong>
-  <%= @property.owner_name %>
-</p>
 
-<p>
-  <strong>Auction amount:</strong>
-  <%= @property.auction_amount %>
-</p>
+<div class="test">
+  <div class="card">
+    <div class="card-header">
+      Other Info
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Found By:</h6>
+      <p class="card-text"><%= @property.found_by %></p>
+      <h6 class="card-title">Secondary Revision:</h6>
+      <p class="card-text"><%= @property.secondary_revision %></p>
+      <h6 class="card-title">Type of loan:</h6>
+      <p class="card-text"><%= @property.type_of_loan %></p>
+      <h6 class="card-title">Home status:</h6>
+      <p class="card-text"><%= @property.home_status %></p>
+      <h6 class="card-title">Agent:</h6>
+      <p class="card-text"><%= @property.agent %></p>
+      <h6 class="card-title">Review date:</h6>
+      <p class="card-text"><%= @property.review_by_date %></p>
+      <h6 class="card-title">Urgent:</h6>
+      <p class="card-text"><%= @property.urgent %></p>
+      <h6 class="card-title">Possible phone #:</h6>
+      <p class="card-text"><%= @property.possible_phone_numbers %></p>
+      <h6 class="card-title">Possible addreses:</h6>
+      <p class="card-text"><%= @property.possible_address %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Arv:</strong>
-  <%= @property.arv %>
-</p>
+<div class="test">
+  <div class="card">
+    <div class="card-header">
+      Notes
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= @property.notes %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Property type:</strong>
-  <%= @property.property_type %>
-</p>
-
-<p>
-  <strong>Number of bedrooms:</strong>
-  <%= @property.number_of_bedrooms %>
-</p>
-
-<p>
-  <strong>Number of bathrooms:</strong>
-  <%= @property.number_of_bathrooms %>
-</p>
-
-<p>
-  <strong>Home sqr footage:</strong>
-  <%= @property.home_sqr_footage %>
-</p>
-
-<p>
-  <strong>Property sqr footage:</strong>
-  <%= @property.property_sqr_footage %>
-</p>
-
-<p>
-  <strong>Found by:</strong>
-  <%= @property.found_by %>
-</p>
-
-<p>
-  <strong>Secondary revision:</strong>
-  <%= @property.secondary_revision %>
-</p>
-
-<p>
-  <strong>Type of loan:</strong>
-  <%= @property.type_of_loan %>
-</p>
-
-<p>
-  <strong>Home status:</strong>
-  <%= @property.home_status %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @property.notes %>
-</p>
-
-<p>
-  <strong>Agent:</strong>
-  <%= @property.agent %>
-</p>
-
-<p>
-  <strong>Review by date:</strong>
-  <%= @property.review_by_date %>
-</p>
-
-<p>
-  <strong>Urgent:</strong>
-  <%= @property.urgent %>
-</p>
-
-<p>
-  <strong>Possible phone numbers:</strong>
-  <%= @property.possible_phone_numbers %>
-</p>
-
-<p>
-  <strong>Possible address:</strong>
-  <%= @property.possible_address %>
-</p>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

@@ -12,7 +12,7 @@
  *
  */
 
-$theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
+$theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
 @import "bootstrap";
 
 // App sections
@@ -33,6 +33,12 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 @import "simple_form-bootstrap/simple_form-bootstrap";
 @import "bootstrap-table/bootstrap-table";
 
+.test {
+  margin-bottom: 12px;
+  width: 50%;
+  font-size: 15px; /* Increase font-size */
+}
+
 .navbar-custom {
   background-color: #ff5500;
 }
@@ -40,12 +46,12 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-  color: rgba(255,255,255,.8);
+  color: rgba(255, 255, 255, .8);
 }
 
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
 }
 
 /* change the color of active or hovered links */
@@ -58,11 +64,47 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 .navbar-custom .dropdown-menu {
   background-color: #ff5500;
 }
+
 .navbar-custom .dropdown-item {
   color: #ffffff;
 }
+
 .navbar-custom .dropdown-item:hover,
 .navbar-custom .dropdown-item:focus {
   color: #333333;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255, 255, 255, .5);
 }
+
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+

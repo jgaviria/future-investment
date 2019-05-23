@@ -67,3 +67,6 @@ gem 'jquery-rails'
 
 # Adding simple form
 gem 'simple_form'
+
+# Adding bootstrap table :)
+gem 'bootstrap-table-rails'
