@@ -13,11 +13,13 @@
 
 <nav class="navbar navbar-expand-sm navbar-custom">
   <a href="/" class="navbar-brand">Alex is gay</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
     <i class="fa fa-bars fa-lg py-1 text-white"></i>
   </button>
+
   <div class="navbar-collapse collapse" id="navbarCustom">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" <%= link_to 'New Property', new_property_path %> </a>
       </li>
@@ -27,7 +29,7 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Statistics
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -37,16 +39,16 @@
       </li>
     </ul>
 
-    <p class="navbar-text pull-right">
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-    </p>
+    <ul class="navbar-nav">
+      <a class="nav-item">
+        <% if user_signed_in? %>
+          <a class="nav-link"<%= link_to 'Edit profile', edit_user_registration_path %> </a>
+          <a class="nav-link"<%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
+        <% else %>
+          <a class="nav-link" <%= link_to "Sign up", new_user_registration_path %> </a>
+          <a class="nav-link" <%= link_to "Login", new_user_session_path %> </a>
+        <% end %>
+    </ul>
 
   </div>
 </nav>
