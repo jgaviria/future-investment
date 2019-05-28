@@ -1,10 +1,26 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: [:show, :edit, :update, :destroy, :archive]
 
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    @properties = Property.where(archive: false).order(urgent: :desc)
+  end
+
+  # GET /properties
+  # GET /properties.json
+  def archives
+    @archived_properties = Property.where(archive: true)
+  end
+
+  # GET /properties
+  # GET /properties.json
+  def archive
+    if @property.update(archive: true)
+      redirect_to properties_path, notice: 'Property was successfully archived.'
+    else
+      raise 'damn something happened'
+    end
   end
 
   # GET /properties/1
@@ -69,6 +85,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:address, :city, :state, :zip_code, :county, :owner_name, :auction_amount, :arv, :property_type, :number_of_bedrooms, :number_of_bathrooms, :home_sqr_footage, :property_sqr_footage, :found_by, :secondary_revision, :type_of_loan, :home_status, :notes, :agent, :review_by_date, :urgent, :possible_phone_numbers, :possible_address)
+      params.require(:property).permit(:address, :city, :state, :zip_code, :county, :owner_name, :auction_amount, :arv, :property_type, :number_of_bedrooms, :number_of_bathrooms, :home_sqr_footage, :property_sqr_footage, :found_by, :secondary_revision, :type_of_loan, :home_status, :notes, :agent, :review_by_date, :urgent, :possible_phone_numbers, :possible_address, :archive)
     end
 end

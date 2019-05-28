@@ -1,34 +1,46 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-    <break></break>
-    <div style="margin-top:50px;"></div>
-    <h4>Properties</h4>
-    <div style="margin-top:50px;"></div>
+      <break></break>
+      <div style="margin-top:50px;"></div>
+      <h4>Properties</h4>
+      <div style="margin-top:50px;"></div>
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
 
-    <table id="myTable">
-      <tr class="header">
-        <th style="width:10%;">ID</th>
-        <th style="width:20%;">Address</th>
-        <th style="width:20%;">City</th>
-        <th style="width:20%;">County</th>
-        <th style="width:20%;">Urgent</th>
-        <th style="width:20%;"></th>
-      </tr>
-
-      <% @properties.each do |property| %>
-        <tr>
-          <td><%= property.id %></td>
-          <td><%= property.address %></td>
-          <td><%= property.city %></td>
-          <td><%= property.county %></td>
-          <td><%= property.urgent %></td>
-          <td><%= link_to 'Edit', edit_property_path(property) %> <%= link_to 'Show', property %> </td>
+      <table id="myTable">
+        <tr class="header">
+          <th style="width:10%;">ID</th>
+          <th style="width:20%;">Address</th>
+          <th style="width:20%;">City</th>
+          <th style="width:20%;">County</th>
+          <th style="width:20%;"></th>
         </tr>
-      <% end %>
-    </table>
+
+        <% @properties.each do |property| %>
+          <% if property.urgent %>
+            <tr class="table-warning">
+              <td><%= property.id %></td>
+              <td><%= property.address %></td>
+              <td><%= property.city %></td>
+              <td><%= property.county %></td>
+              <td style='white-space: nowrap'>
+                <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
+              </td>
+            </tr>
+          <% else %>
+            <tr>
+              <td><%= property.id %></td>
+              <td><%= property.address %></td>
+              <td><%= property.city %></td>
+              <td><%= property.county %></td>
+              <td style='white-space: nowrap'>
+                <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
 
     </div>
   </div>

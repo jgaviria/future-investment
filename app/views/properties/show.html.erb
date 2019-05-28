@@ -115,5 +115,6 @@
 
 <div class="text-center space">
   <%= link_to 'Edit', edit_property_path(@property), :class => "btn btn-primary btn-lg" %>
+  <%= link_to('Archive', archive_property_path(@property), method: :post, :class => "btn btn-warning btn-lg") %>
   <%= link_to 'Back', properties_path, :class => "btn btn-secondary btn-lg" %>
 </div>
