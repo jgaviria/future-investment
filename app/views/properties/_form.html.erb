@@ -34,6 +34,10 @@
 
               <%= form.input :owner_name %>
 
+              <%= form.input :auction_type %>
+
+              <%= form.input :auction_date %>
+
               <%= form.input :auction_amount %>
 
               <%= form.input :arv %>
@@ -54,7 +58,7 @@
 
               <%= form.input :type_of_loan %>
 
-              <%= form.input :home_status %>
+              <%= form.input :home_status, :collection => ["Negotiate Immediately", "Auction Only", "No Good"]%>
 
               <%= form.input :notes %>
 

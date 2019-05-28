@@ -42,7 +42,6 @@
     <ul class="navbar-nav">
       <a class="nav-item">
         <% if user_signed_in? %>
-          <a class="nav-link"<%= link_to 'Edit profile', edit_user_registration_path %> </a>
           <a class="nav-link"<%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
         <% else %>
           <a class="nav-link" <%= link_to "Sign up", new_user_registration_path %> </a>
@@ -53,12 +52,12 @@
   </div>
 </nav>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+<%# if notice %>
+<!--  <p class="alert alert-success"><%#= notice %></p>-->
+<%# end %>
+<%# if alert %>
+<!--  <p class="alert alert-danger"><%#= alert %></p>-->
+<%# end %>
 
 <%= yield %>
 

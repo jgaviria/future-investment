@@ -13,7 +13,7 @@
         <th style="width:10%;">ID</th>
         <th style="width:20%;">Address</th>
         <th style="width:20%;">City</th>
-        <th style="width:20%;">State</th>
+        <th style="width:20%;">County</th>
         <th style="width:20%;">Urgent</th>
         <th style="width:20%;"></th>
       </tr>
@@ -23,7 +23,7 @@
           <td><%= property.id %></td>
           <td><%= property.address %></td>
           <td><%= property.city %></td>
-          <td><%= property.state %></td>
+          <td><%= property.county %></td>
           <td><%= property.urgent %></td>
           <td><%= link_to 'Edit', edit_property_path(property) %> <%= link_to 'Show', property %> </td>
         </tr>

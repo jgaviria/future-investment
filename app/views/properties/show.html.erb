@@ -1,102 +1,119 @@
+<div class="space">
+  <div class="row margin1">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header">
+          Location Info
+        </div>
+        <div class="card-body">
+          <h6 class="card-title bold">Address:</h6>
+          <p class="card-text ligther"><%= @property.address %></p>
+          <h6 class="card-title bold">City:</h6>
+          <p class="card-text ligther"><%= @property.city %></p>
+          <h6 class="card-title bold">State:</h6>
+          <p class="card-text ligther"><%= @property.state %></p>
+          <h6 class="card-title bold">Zip:</h6>
+          <p class="card-text ligther"><%= @property.zip_code %></p>
+          <h6 class="card-title bold">County:</h6>
+          <p class="card-text ligther"><%= @property.county %></p>
+        </div>
+      </div>
+    </div>
 
-<div class="test">
-  <div class="card">
-    <div class="card-header">
-      Location Info
-    </div>
-    <div class="card-body">
-      <h6 class="card-title">Address:</h6>
-      <p class="card-text"><%= @property.address %></p>
-      <h6 class="card-title">City:</h6>
-      <p class="card-text"><%= @property.city %></p>
-      <h6 class="card-title">State:</h6>
-      <p class="card-text"><%= @property.state %></p>
-      <h6 class="card-title">Zip:</h6>
-      <p class="card-text"><%= @property.zip_code %></p>
-      <h6 class="card-title">County:</h6>
-      <p class="card-text"><%= @property.county %></p>
-    </div>
-  </div>
-</div>
+    <div class="col-sm-6">
+      <iframe width="400" height="400" frameborder="" style="border:0" ,
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUrNwJQh9zL341lKAu7_uTmN2_IHTUDvE&q=United State, 33584, FL, Seffner, 201 Dakota Hill Dr"
+              allowfullscreen>
+      </iframe>
 
-
-<div class="test">
-  <div class="card">
-    <div class="card-header">
-      Auction Info
-    </div>
-    <div class="card-body">
-      <h6 class="card-title">Owner Name:</h6>
-      <p class="card-text"><%= @property.owner_name %></p>
-      <h6 class="card-title">Auction Amount:</h6>
-      <p class="card-text"><%= @property.auction_amount %></p>
-      <h6 class="card-title">After Repair Value:</h6>
-      <p class="card-text"><%= @property.arv %></p>
-    </div>
-  </div>
-</div>
-
-<div class="test">
-  <div class="card">
-    <div class="card-header">
-      House Features
-    </div>
-    <div class="card-body">
-      <h6 class="card-title">Property type:</h6>
-      <p class="card-text"><%= @property.property_type %></p>
-      <h6 class="card-title"># of Bedrooms:</h6>
-      <p class="card-text"><%= @property.number_of_bedrooms %></p>
-      <h6 class="card-title"># of bathrooms:</h6>
-      <p class="card-text"><%= @property.number_of_bathrooms %></p>
-      <h6 class="card-title">Home sqr footage:</h6>
-      <p class="card-text"><%= @property.home_sqr_footage %></p>
-      <h6 class="card-title">Property sqr footage:</h6>
-      <p class="card-text"><%= @property.property_sqr_footage %></p>
     </div>
   </div>
 
-</div>
 
-
-<div class="test">
-  <div class="card">
-    <div class="card-header">
-      Other Info
-    </div>
-    <div class="card-body">
-      <h6 class="card-title">Found By:</h6>
-      <p class="card-text"><%= @property.found_by %></p>
-      <h6 class="card-title">Secondary Revision:</h6>
-      <p class="card-text"><%= @property.secondary_revision %></p>
-      <h6 class="card-title">Type of loan:</h6>
-      <p class="card-text"><%= @property.type_of_loan %></p>
-      <h6 class="card-title">Home status:</h6>
-      <p class="card-text"><%= @property.home_status %></p>
-      <h6 class="card-title">Agent:</h6>
-      <p class="card-text"><%= @property.agent %></p>
-      <h6 class="card-title">Review date:</h6>
-      <p class="card-text"><%= @property.review_by_date %></p>
-      <h6 class="card-title">Urgent:</h6>
-      <p class="card-text"><%= @property.urgent %></p>
-      <h6 class="card-title">Possible phone #:</h6>
-      <p class="card-text"><%= @property.possible_phone_numbers %></p>
-      <h6 class="card-title">Possible addreses:</h6>
-      <p class="card-text"><%= @property.possible_address %></p>
+  <div class="col-sm-4 space2">
+    <div class="card">
+      <div class="card-header">
+        Auction Info
+      </div>
+      <div class="card-body">
+        <h6 class="card-title bold">Owner Name:</h6>
+        <p class="card-text ligther"><%= @property.owner_name %></p>
+        <h6 class="card-title bold">Auction Type:</h6>
+        <p class="card-text ligther"><%= @property.auction_type %></p>
+        <h6 class="card-title bold">Auction Date:</h6>
+        <p class="card-text ligther"><%= @property.auction_date %></p>
+        <h6 class="card-title bold">Auction Amount:</h6>
+        <p class="card-text ligther"><%= @property.auction_amount %></p>
+        <h6 class="card-title bold">After Repair Value:</h6>
+        <p class="card-text ligther"><%= @property.arv %></p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="test">
-  <div class="card">
-    <div class="card-header">
-      Notes
+  <div class="col-sm-4 space2">
+    <div class="card">
+      <div class="card-header">
+        House Features
+      </div>
+      <div class="card-body">
+        <h6 class="card-title bold">Property type:</h6>
+        <p class="card-text ligther"><%= @property.property_type %></p>
+        <h6 class="card-title bold"># of Bedrooms:</h6>
+        <p class="card-text ligther"><%= @property.number_of_bedrooms %></p>
+        <h6 class="card-title bold"># of bathrooms:</h6>
+        <p class="card-text ligther"><%= @property.number_of_bathrooms %></p>
+        <h6 class="card-title bold">Home sqr footage:</h6>
+        <p class="card-text ligther"><%= @property.home_sqr_footage %></p>
+        <h6 class="card-title bold">Property sqr footage:</h6>
+        <p class="card-text ligther"><%= @property.property_sqr_footage %></p>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="card-text"><%= @property.notes %></p>
+
+  </div>
+
+
+  <div class="col-sm-4 space2">
+    <div class="card">
+      <div class="card-header">
+        Other Info
+      </div>
+      <div class="card-body">
+        <h6 class="card-title bold">Found By:</h6>
+        <p class="card-text ligther"><%= @property.found_by %></p>
+        <h6 class="card-title bold">Secondary Revision:</h6>
+        <p class="card-text ligther"><%= @property.secondary_revision %></p>
+        <h6 class="card-title bold">Type of loan:</h6>
+        <p class="card-text ligther"><%= @property.type_of_loan %></p>
+        <h6 class="card-title bold">Home status:</h6>
+        <p class="card-text ligther"><%= @property.home_status %></p>
+        <h6 class="card-title bold">Agent:</h6>
+        <p class="card-text ligther"><%= @property.agent %></p>
+        <h6 class="card-title bold">Review date:</h6>
+        <p class="card-text ligther"><%= @property.review_by_date %></p>
+        <h6 class="card-title bold">Urgent:</h6>
+        <p class="card-text ligther"><%= @property.urgent %></p>
+        <h6 class="card-title bold">Possible phone #:</h6>
+        <p class="card-text ligther"><%= @property.possible_phone_numbers %></p>
+        <h6 class="card-title bold">Possible addreses:</h6>
+        <p class="card-text ligther"><%= @property.possible_address %></p>
+      </div>
     </div>
   </div>
+
+  <div class="col-sm-4 space2">
+    <div class="card">
+      <div class="card-header">
+        Notes
+      </div>
+      <div class="card-body">
+        <p class="card-text ligther"><%= @property.notes %></p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<div class="text-center space">
+  <%= link_to 'Edit', edit_property_path(@property), :class => "btn btn-primary btn-lg" %>
+  <%= link_to 'Back', properties_path, :class => "btn btn-secondary btn-lg" %>
+</div>
