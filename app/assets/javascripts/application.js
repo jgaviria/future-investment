@@ -18,4 +18,5 @@
 //= require activestorage
 //= require turbolinks
 //= require bootstrap-table/bootstrap-table
+//= require cocoon
 //= require_tree .

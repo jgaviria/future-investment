@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_004906) do
+ActiveRecord::Schema.define(version: 2019_05_28_201449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "debts", force: :cascade do |t|
+    t.string "kind"
+    t.integer "value"
+    t.integer "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_004906) do
     t.string "auction_type"
     t.datetime "auction_date"
     t.boolean "archive", default: false
+    t.integer "profit"
   end
 
   create_table "users", force: :cascade do |t|

@@ -56,9 +56,19 @@
 
               <%= form.input :secondary_revision %>
 
-              <%= form.input :type_of_loan %>
+              <div class="debts">
+                <h5>House Debt:</h5>
+                <div id='debts'>
+                  <%= form.simple_fields_for :debts do |task| %>
+                    <%= render 'debt_fields', :f => task %>
+                  <% end %>
+                  <div class='links'>
+                    <%= link_to_add_association button_tag('Add Debt', type: "button", class: "button"), form, :debts %>
+                  </div>
+                </div>
+              </div>
 
-              <%= form.input :home_status, :collection => ["Negotiate Immediately", "Auction Only", "No Good"]%>
+              <%= form.input :home_status, :collection => ["Negotiate Immediately", "Auction Only", "No Good"] %>
 
               <%= form.input :notes %>
 

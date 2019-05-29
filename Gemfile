@@ -73,3 +73,6 @@ gem 'bootstrap-table-rails'
 
 # Adding devise (user authorization gem)
 gem 'devise'
+
+# Needed for nested forms
+gem 'cocoon'
