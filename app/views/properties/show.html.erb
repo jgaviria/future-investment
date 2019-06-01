@@ -1,37 +1,24 @@
-<div class="space">
-  <div class="row margin1">
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-header">
-          Location Info
-        </div>
-        <div class="card-body">
-          <h6 class="card-title bold">Address:</h6>
-          <p class="card-text ligther"><%= @property.address %></p>
-          <h6 class="card-title bold">City:</h6>
-          <p class="card-text ligther"><%= @property.city %></p>
-          <h6 class="card-title bold">State:</h6>
-          <p class="card-text ligther"><%= @property.state %></p>
-          <h6 class="card-title bold">Zip:</h6>
-          <p class="card-text ligther"><%= @property.zip_code %></p>
-          <h6 class="card-title bold">County:</h6>
-          <p class="card-text ligther"><%= @property.county %></p>
-        </div>
+<div class="row margin1">
+  <div class="col-sm-5">
+    <div class="card card_space">
+      <div class="card-header">
+        Location Info
+      </div>
+      <div class="card-body">
+        <h6 class="card-title bold">Address:</h6>
+        <p class="card-text ligther"><%= @property.address %></p>
+        <h6 class="card-title bold">City:</h6>
+        <p class="card-text ligther"><%= @property.city %></p>
+        <h6 class="card-title bold">State:</h6>
+        <p class="card-text ligther"><%= @property.state %></p>
+        <h6 class="card-title bold">Zip:</h6>
+        <p class="card-text ligther"><%= @property.zip_code %></p>
+        <h6 class="card-title bold">County:</h6>
+        <p class="card-text ligther"><%= @property.county %></p>
       </div>
     </div>
 
-    <div class="col-sm-6">
-      <iframe width="400" height="400" frameborder="" style="border:0" ,
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUrNwJQh9zL341lKAu7_uTmN2_IHTUDvE&q=United State, 33584, FL, Seffner, 201 Dakota Hill Dr"
-              allowfullscreen>
-      </iframe>
-
-    </div>
-  </div>
-
-
-  <div class="col-sm-4 space2">
-    <div class="card">
+    <div class="card card_space">
       <div class="card-header">
         Auction Info
       </div>
@@ -48,10 +35,9 @@
         <p class="card-text ligther"><%= @property.arv %></p>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-4 space2">
-    <div class="card">
+
+    <div class="card card_space">
       <div class="card-header">
         House Features
       </div>
@@ -69,11 +55,7 @@
       </div>
     </div>
 
-  </div>
-
-
-  <div class="col-sm-4 space2">
-    <div class="card">
+    <div class="card card_space">
       <div class="card-header">
         Other Info
       </div>
@@ -98,10 +80,8 @@
         <p class="card-text ligther"><%= @property.possible_address %></p>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-4 space2">
-    <div class="card">
+    <div class="card card_space">
       <div class="card-header">
         Notes
       </div>
@@ -111,7 +91,31 @@
     </div>
   </div>
 
+
+  <div class="col-sm-7">
+
+    <div class="map_space">
+      <iframe width="630" height="375" frameborder="" style="border:0" ,
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUrNwJQh9zL341lKAu7_uTmN2_IHTUDvE&q=United State, 33584, FL, Seffner, 201 Dakota Hill Dr"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <% if @property.property.attached? %>
+      <% @property.property.all.each do |img| %>
+        <div class="pictures">
+          <%= image_tag img, height: "200", width: "200" %>
+        </div>
+      <% end %>
+    <% end %>
+
+
+  </div>
 </div>
+</div>
+
+
+
 
 <div class="text-center space">
   <%= link_to 'Edit', edit_property_path(@property), :class => "btn btn-primary btn-lg" %>

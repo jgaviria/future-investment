@@ -68,6 +68,15 @@
                 </div>
               </div>
 
+              <div class="space_photos">
+                <%= form.label "Property Photo" %>
+                <%= form.file_field :property %>
+              </div>
+
+              <div class="space_photos">
+                <%= form.input :urgent %>
+              </div>
+
               <%= form.input :home_status, :collection => ["Negotiate Immediately", "Auction Only", "No Good"] %>
 
               <%= form.input :notes %>
@@ -75,8 +84,6 @@
               <%= form.input :agent %>
 
               <%= form.input :review_by_date %>
-
-              <%= form.input :urgent %>
 
               <%= form.input :possible_phone_numbers %>
 
