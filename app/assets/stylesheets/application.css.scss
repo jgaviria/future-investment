@@ -119,7 +119,7 @@ $theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
   border-collapse: collapse; /* Collapse borders */
   width: 100%; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
+  font-size: 15px; /* Increase font-size */
 }
 
 #myTable th, #myTable td {
@@ -137,12 +137,19 @@ $theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
   background-color: #f1f1f1;
 }
 
-body{
+//Esto cambia la letra de la tabla principal
+body2{
   margin:0;
   color:#6a6f8c;
-
   font:600 16px/18px 'Open Sans',sans-serif;
 }
+
+body{
+  margin:0;
+  color: #0e0911;
+  //font:100 16px/1px ,sans-serif;
+}
+
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
@@ -282,8 +289,15 @@ a{color:inherit;text-decoration:none}
 .hr{
   height:2px;
   margin:60px 0 50px 0;
-  background:rgba(255,255,255,.2);
+  background: rgba(14, 9, 17, 0.2);
 }
+
+.hr2{
+  height:2px;
+  margin:60px 0 50px 0;
+  background: rgba(14, 9, 17, 0.2);
+}
+
 .foot-lnk{
   text-align:center;
 }
@@ -339,6 +353,10 @@ box2 {
 
 .space{
   margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.card_space{
   margin-bottom: 10px;
 }
 
