@@ -76,3 +76,5 @@ gem 'devise'
 
 # Needed for nested forms
 gem 'cocoon'
+
+gem 'mini_racer'
