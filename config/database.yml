@@ -81,5 +81,7 @@ test:
 production:
   <<: *default
   database: future_investment_production
-  username: future_investment
-  password: <%= ENV['FUTURE_INVESTMENT_DATABASE_PASSWORD'] %>
+  username: hello_world
+  password: <%= ENV['HELLO_WORLD_DATABASE_PASSWORD'] %>
+  host: <%= ENV['HELLO_WORLD_DATABASE_HOST'] %>
+  port: <%= ENV['HELLO_WORLD_DATABASE_PORT'] %>
