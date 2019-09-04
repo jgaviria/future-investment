@@ -61,11 +61,11 @@
 #   }
 
 
-role :app, %w{deploy_user@<3.88.27.72}
-role :web, %w{deploy_user@<3.88.27.72}
-role :db,  %w{deploy_user@<3.88.27.72}
+role :app, %w{deploy_user@54.172.134.132}
+role :web, %w{deploy_user@54.172.134.132}
+role :db,  %w{deploy_user@54.172.134.132}
 set :ssh_options, {
-  keys: %w(/Users/jgaviria/Desktop/ec2-key-pair.pem),
+  keys: %w(/Users/jgaviria/Desktop/future_investment_key.pem),
   forward_agent: false,
   auth_methods: %w(publickey password)
 }

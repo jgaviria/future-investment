@@ -4,7 +4,7 @@ lock "~> 3.11.1"
 set :application, "future_investment"
 set :repo_url, "git@github.com:jgaviria/future-investment.git"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
-set :rvm_ruby_version, 'ruby-2.3.4'
+set :rvm_ruby_version, 'ruby-2.5.0'
 set :passenger_restart_with_touch, true
 
 # Default branch is :master
