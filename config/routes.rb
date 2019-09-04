@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Devise routes
   devise_for :users
 
+  # Entry point to the app
+  root 'properties#index'
+
   # Main routes
   resources :properties
 
