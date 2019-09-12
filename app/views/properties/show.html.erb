@@ -96,7 +96,7 @@
 
     <div class="map_space">
       <iframe width="630" height="375" frameborder="" style="border:0" ,
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUrNwJQh9zL341lKAu7_uTmN2_IHTUDvE&q=United State, 33584, FL, Seffner, 201 Dakota Hill Dr"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUrNwJQh9zL341lKAu7_uTmN2_IHTUDvE&q=United State, <%= @property&.zip_code %>, <%= @property&.state %>, <%= @property&.city %>, <%= @property&.address %>"
               allowfullscreen>
       </iframe>
     </div>
