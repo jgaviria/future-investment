@@ -87,3 +87,5 @@ gem 'mini_racer'
 
 # Needed for aws deployment
 gem 'figaro'
+
+gem 'aws-sdk'
