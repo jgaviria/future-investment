@@ -11,9 +11,7 @@
     <table id="myTable">
       <tr class="header">
         <th style="width:7%;">ID</th>
-        <th style="width:25%;">Address</th>
-        <th style="width:15%;">City</th>
-        <th style="width:20%;">County</th>
+        <th>Address</th>
         <th style="width:15%;"></th>
       </tr>
 
@@ -21,8 +19,6 @@
         <tr>
           <td><%= property.id %></td>
           <td><%= property.address %></td>
-          <td><%= property.city %></td>
-          <td><%= property.county %></td>
           <td style='white-space: nowrap'>
             <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
           </td>
