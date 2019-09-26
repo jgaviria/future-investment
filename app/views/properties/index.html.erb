@@ -10,7 +10,7 @@
 
       <table id="myTable">
         <tr class="header">
-          <th style="width:7%;">ID</th>
+          <th style="width:15%;"></th>
           <th style="width:55%;">Address</th>
           <th style="width:15%;">Profit</th>
           <th style="width:15%;"></th>
@@ -19,7 +19,7 @@
         <% @properties.each do |property| %>
           <% if property.urgent %>
             <tr class="table-primary">
-              <td><%= property.id %></td>
+              <td><%= property.property.image %></td>
               <td><%= property.address %></td>
               <td><%= property.profit %></td>
               <td style='white-space: nowrap'>
@@ -28,8 +28,10 @@
             </tr>
           <% else %>
             <tr>
-              <td><%= property.id %></td>
-              <td><%= property.address %></td>
+              <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
+              <td>
+                <%= property.address%> <br/><p id="hey"><%= property.city%>, <%=property.state%> <%=property.zip_code%>, <%=property.county%></p>
+              </td>
               <td><%= property.profit %></td>
               <td style='white-space: nowrap'>
                 <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>

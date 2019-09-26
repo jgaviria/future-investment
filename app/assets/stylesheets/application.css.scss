@@ -131,6 +131,20 @@ $theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
 #myTable tr {
   /* Add a bottom border to all table rows */
   border-bottom: 1px solid #ddd;
+  font-family: Avenir,Helvetica Neue,helvetica,arial,sans-serif;
+  color: #5c676e;
+}
+
+#myTable td1{
+  /* Add a bottom border to all table rows */
+  border-bottom: 10px solid #ddd;
+  font-family: Avenir,Helvetica Neue,helvetica,arial,sans-serif;
+  color: #5c676e;
+}
+
+#hey {
+  font-size: 12px;
+  color: #5c676e;
 }
 
 #myTable tr.header, #myTable tr:hover {
@@ -148,6 +162,7 @@ body2{
 body{
   margin:0;
   color: #0e0911;
+  background: #fff;
   //font:100 16px/1px ,sans-serif;
 }
 
