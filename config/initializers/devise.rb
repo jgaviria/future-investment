@@ -290,4 +290,7 @@ Devise.setup do |config|
   #
   #
    config.scoped_views = true
+  #
+  # Add devise secret key as an env variable
+  config.secret_key = ENV[ 'DEVISE_SECRET_KEY' ]
 end
