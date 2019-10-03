@@ -19,7 +19,11 @@
         <% @properties.each do |property| %>
           <% if property.urgent %>
             <tr class="table-primary">
-              <td><%= property.property.image %></td>
+              <% if property.property.present? %>
+                <td><%= property.property.image %></td>
+              <% else %>
+                <td><%= image_tag 'default.jpg' %></td>
+              <% end %>
               <td><%= property.address %></td>
               <td><%= property.profit %></td>
               <td style='white-space: nowrap'>
@@ -28,9 +32,15 @@
             </tr>
           <% else %>
             <tr>
-              <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
+              <% if property.property.present? %>
+                <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
+              <% else %>
+                <td><%= image_tag 'no_pic.png', height: "80", width: "120"  %></td>
+              <% end %>
               <td>
-                <%= property.address%> <br/><p id="hey"><%= property.city%>, <%=property.state%> <%=property.zip_code%>, <%=property.county%></p>
+                <%= property.address %> <br/>
+                <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
+                  , <%= property.county %></p>
               </td>
               <td><%= property.profit %></td>
               <td style='white-space: nowrap'>
