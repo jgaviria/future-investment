@@ -92,12 +92,12 @@ class PropertiesController < ApplicationController
   end
 
   def calculate_profit(params)
-    return if params["property"].nil? || params["arv"].nil?
+    return if params["debts_attributes"].nil? || params["arv"].nil?
     arv   = params["arv"].to_i
     adder = 0
     params["debts_attributes"].each do |hash|
       adder += hash.second["value"].to_i
     end
-    arv - adder if adder.present? && arv.present?
+    arv - adder
   end
 end
