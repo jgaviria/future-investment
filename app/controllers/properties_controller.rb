@@ -41,7 +41,7 @@ class PropertiesController < ApplicationController
   # POST /properties.json
   def create
     @property        = Property.new(property_params)
-    @property.profit ||= calculate_profit(params)
+    @property.profit = calculate_profit(params)
 
     respond_to do |format|
       if @property.save
@@ -57,7 +57,7 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
-    @property.profit ||= calculate_profit(property_params)
+    @property.profit = calculate_profit(property_params)
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
