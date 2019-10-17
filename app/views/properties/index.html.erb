@@ -41,6 +41,7 @@
                 <%= property.address %> <br/>
                 <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
                   , <%= property.county %></p>
+                <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
               </td>
               <td><%= property.profit %></td>
               <td style='white-space: nowrap'>

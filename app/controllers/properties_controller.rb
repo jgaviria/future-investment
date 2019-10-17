@@ -1,10 +1,10 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: [:show, :edit, :update, :destroy, :archive]
+  before_action :set_property, only: [:show, :edit, :update, :destroy, :archive, :activate]
 
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.where(archive: false).order(urgent: :desc)
+    @properties = Property.where(archive: false).order(urgent: :desc).order(auction_date: :asc)
   end
 
   # GET /properties
@@ -76,6 +76,15 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # Moves properties back to an active state
+  def activate
+    if @property.update(archive: false)
+      redirect_to properties_path, notice: 'Activated'
+    else
+      raise 'damn something happened'
     end
   end
 

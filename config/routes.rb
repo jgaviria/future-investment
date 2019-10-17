@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :properties do
     member do
       post :archive
+      post :activate
     end
   end
 
