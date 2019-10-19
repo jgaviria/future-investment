@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-10">
+    <div class="col-11">
       <break></break>
+
       <div style="margin-top:50px;"></div>
 
       <div class="right">
         <%= link_to("Generate csv", properties_path(format: :csv), class: "btn btn-success",) %>
       </div>
-
-      <div style="margin-top:50px;"></div>
 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
 
@@ -22,44 +21,29 @@
         </tr>
 
         <% @properties.each do |property| %>
-          <% if property.urgent %>
-            <tr class="table-primary">
-              <% if property.property.present? %>
-                <td><%= property.property.image %></td>
-              <% else %>
-                <td><%= image_tag 'default.jpg' %></td>
-              <% end %>
-              <td><%= property.address %></td>
-              <td><%= property.profit %></td>
-              <td style='white-space: nowrap'>
-                <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
-              </td>
-            </tr>
-          <% else %>
-            <tr>
-              <td>
-                <div class="prop_number">
-                  <%= "##{property.id}" %>
-                </div>
-              </td>
+          <tr>
+            <td>
+              <div class="prop_number">
+                <%= "##{property.id}" %>
+              </div>
+            </td>
 
-              <% if property.property.present? %>
-                <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
-              <% else %>
-                <td><%= image_tag 'no_pic.png', height: "80", width: "120" %></td>
-              <% end %>
-              <td>
-                <%= property.address %> <br/>
-                <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
-                  , <%= property.county %></p>
-                <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
-              </td>
-              <td><%= property.profit %></td>
-              <td style='white-space: nowrap'>
-                <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
-              </td>
-            </tr>
-          <% end %>
+            <% if property.property.present? %>
+              <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
+            <% else %>
+              <td><%= image_tag 'no_pic.png', height: "80", width: "120" %></td>
+            <% end %>
+            <td>
+              <%= property.address %> <br/>
+              <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
+                , <%= property.county %></p>
+              <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
+            </td>
+            <td><%= property.profit %></td>
+            <td style='white-space: nowrap'>
+              <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
+            </td>
+          </tr>
         <% end %>
       </table>
 

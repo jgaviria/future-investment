@@ -1,31 +1,31 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-    <break></break>
-    <div style="margin-top:50px;"></div>
-    <h4>Archived Properties</h4>
-    <div style="margin-top:50px;"></div>
+      <break></break>
+      <div style="margin-top:50px;"></div>
+      <h4>Archived Properties</h4>
+      <div style="margin-top:50px;"></div>
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
 
-    <table id="myTable">
-      <tr class="header">
-        <th style="width:7%;">ID</th>
-        <th>Address</th>
-        <th style="width:15%;"></th>
-      </tr>
-
-      <% @archived_properties.each do |property| %>
-        <tr>
-          <td><%= property.id %></td>
-          <td><%= property.address %></td>
-          <td style='white-space: nowrap'>
-            <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
-            <%= link_to('Undo', activate_property_path(id: property.id), method: :post, :class => "btn btn-primary btn-sm active") %>
-          </td>
+      <table id="myTable">
+        <tr class="header">
+          <th style="width:7%;">ID</th>
+          <th>Address</th>
+          <th style="width:15%;"></th>
         </tr>
-      <% end %>
-    </table>
+
+        <% @archived_properties.each do |property| %>
+          <tr>
+            <td><%= property.id %></td>
+            <td><%= property.address %></td>
+            <td style='white-space: nowrap'>
+              <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
+              <%= link_to('Undo', activate_property_path(id: property.id), method: :post, :class => "btn btn-primary btn-sm active") %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
 
     </div>
   </div>
