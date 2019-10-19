@@ -14,8 +14,8 @@
       <table id="myTable">
         <tr class="header">
           <th></th>
+          <th></th>
           <th>Address</th>
-          <th>Profit</th>
           <th></th>
         </tr>
 
@@ -27,14 +27,17 @@
               </div>
             </td>
 
-
+            <% if property.property.present? %>
+              <td><%= image_tag property.property.first, height: "80", width: "100" %></td>
+            <% else %>
+              <td><%= image_tag 'no_pic.png', height: "80", width: "100" %></td>
+            <% end %>
             <td>
               <%= property.address %> <br/>
               <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
                 , <%= property.county %></p>
               <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
             </td>
-            <td><%= property.profit %></td>
             <td style='white-space: nowrap'>
               <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
             </td>
