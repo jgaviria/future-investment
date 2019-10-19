@@ -14,21 +14,17 @@
       <table id="myTable">
         <tr class="header">
           <th></th>
-          <th></th>
           <th>Address</th>
           <th></th>
         </tr>
 
         <% @properties.each do |property| %>
           <tr>
-            <td>
-              <div class="prop_number">
-                <%= "##{property.id}" %>
-              </div>
-            </td>
-
             <% if property.property.present? %>
-              <td><%= image_tag property.property.first, height: "80", width: "100" %></td>
+              <td><%= image_tag property.property.first, height: "80", width: "100" %>
+                <br>
+                <p id="hey"> <%= "##{property.id}" %></p>
+              </td>
             <% else %>
               <td><%= image_tag 'no_pic.png', height: "80", width: "100" %></td>
             <% end %>
@@ -38,7 +34,7 @@
                 , <%= property.county %></p>
               <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
             </td>
-            <td style='white-space: nowrap'>
+            <td>
               <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
             </td>
           </tr>
