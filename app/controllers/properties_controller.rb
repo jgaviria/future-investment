@@ -5,6 +5,12 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.where(archive: false).order(urgent: :desc).order(auction_date: :asc)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @properties.to_csv, filename: "property-list-#{Date.today}.csv" }
+    end
+
   end
 
   # GET /properties
@@ -101,7 +107,7 @@ class PropertiesController < ApplicationController
   end
 
   def calculate_profit(params)
-    debts =  params["debts_attributes"].nil? ? [] : params["debts_attributes"]
+    debts   = params["debts_attributes"].nil? ? [] : params["debts_attributes"]
     arv     = params["arv"].to_i
     act_amt = params["auction_amount"].to_i
     adder   = 0
@@ -110,4 +116,14 @@ class PropertiesController < ApplicationController
     end
     arv - (adder + act_amt)
   end
+
+  def show_csv
+    csv = []
+    csv << ["id", "address", "county"]
+    Property.all.each do |p|
+      csv << [p.id, p.address, p.county]
+    end
+  end
+
 end
+

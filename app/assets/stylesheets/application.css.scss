@@ -334,6 +334,17 @@ box2 {
   height: 100px;
   margin: 1em;
 }
+
+.right {
+  float: right;
+  padding-bottom:10px;
+}
+
+.prop_number {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
 .after-box {
   clear: left;
 }

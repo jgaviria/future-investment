@@ -3,13 +3,18 @@
     <div class="col-10">
       <break></break>
       <div style="margin-top:50px;"></div>
-      <h4>Properties</h4>
+
+      <div class="right">
+        <%= link_to("Generate csv", properties_path(format: :csv), class: "btn btn-success",) %>
+      </div>
+
       <div style="margin-top:50px;"></div>
 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
 
       <table id="myTable">
         <tr class="header">
+          <th style="width:7%;"></th>
           <th style="width:15%;"></th>
           <th style="width:55%;">Address</th>
           <th style="width:15%;">Profit</th>
@@ -32,10 +37,16 @@
             </tr>
           <% else %>
             <tr>
+              <td>
+                <div class="prop_number">
+                  <%= "##{property.id}" %>
+                </div>
+              </td>
+
               <% if property.property.present? %>
                 <td><%= image_tag property.property.first, height: "80", width: "120" %></td>
               <% else %>
-                <td><%= image_tag 'no_pic.png', height: "80", width: "120"  %></td>
+                <td><%= image_tag 'no_pic.png', height: "80", width: "120" %></td>
               <% end %>
               <td>
                 <%= property.address %> <br/>
