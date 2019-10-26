@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # Main routes
   resources :properties
 
+  post '/search', to: 'properties#call_zillow'
+
   # Custom route for archives
   get 'archives', action: :archives, controller: 'properties'
 
