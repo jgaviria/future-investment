@@ -91,3 +91,5 @@ gem 'figaro'
 gem 'aws-sdk'
 
 gem 'font-awesome-rails'
+
+gem 'http'
