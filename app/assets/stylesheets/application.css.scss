@@ -126,6 +126,7 @@ $theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
 #myTable th, #myTable td {
   text-align: left; /* Left-align text */
   padding: 12px; /* Add padding */
+  position: relative;
 }
 
 #myTable tr {
@@ -142,11 +143,21 @@ $theme-colors: ("bootstrap": #563d7c, "simpleform": #00617f);
   color: #5c676e;
 }
 
+#myTable td1{
+  /* Add a bottom border to all table rows */
+  text-align: left; /* Left-align text */
+  padding-bottom: 12px; /* Add padding */
+  position: relative;
+}
 #hey {
   font-size: 12px;
   color: #5c676e;
 }
 
+#hey2 {
+  font-size: 12px;
+  color: #ddd;
+}
 #myTable tr.header, #myTable tr:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
@@ -396,4 +407,26 @@ box2 {
   @-ms-viewport{
     width:320px;
   }
+}
+
+.bottomdiv {
+  border: 1px solid red;
+  height: 50px;
+  width: 50px;
+  position:absolute;
+  left:0;
+  bottom:0;
+}
+.col-md-6.col-sm-6.col-xs-6 {
+  display: table-cell;
+  height: auto;
+  border: 1px solid black;
+  float: none;
+}
+
+.bottom-column
+{
+  padding-top:13px;
+  position: absolute;
+  top: 0;
 }

@@ -21,14 +21,18 @@
         <% @properties.each do |property| %>
           <tr>
             <% if property.property.present? %>
-              <td><%= image_tag property.property.first, height: "90", width: "120" %>
-                <br>
-                <p id="hey"> <%= "##{property.id}" %></p>
+              <td>
+                <div class="bottom-column">
+                  <p id="hey2"> <%= "##{property.id}" %></p>
+                </div>
+                <%= image_tag property.property.first, height: "90", width: "120" %>
               </td>
             <% else %>
-              <td><%= image_tag 'no_pic.png', height: "90", width: "120" %>
-                <br>
-                <p id="hey"> <%= "##{property.id}" %></p>
+              <td>
+                <div class="bottom-column">
+                  <p id="hey2"> <%= "##{property.id}" %></p>
+                </div>
+                <%= image_tag 'no_pic.png', height: "90", width: "120" %>
               </td>
             <% end %>
             <td>
