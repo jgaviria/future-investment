@@ -6,7 +6,7 @@
       <div style="margin-top:50px;"></div>
 
       <div class="right">
-        <%= link_to("Generate csv", properties_path(format: :csv), class: "btn btn-success",) %>
+        <%= link_to("Generar Excel", properties_path(format: :csv), class: "btn btn-success",) %>
       </div>
 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
@@ -37,9 +37,7 @@
             <% end %>
             <td>
               <%= property.address %> <br/>
-              <p id="hey"><%= property.city %>, <%= property.state %> <%= property.zip_code %>
-                , <%= property.county %></p>
-              <p id="hey"><%= property.auction_date.strftime("Auction on %m/%d/%Y") %></p>
+              <p id="hey"><%= property.city %>, <%= property.state %></p>
             </td>
             <td>
               <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>

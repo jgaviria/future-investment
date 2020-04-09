@@ -9,77 +9,27 @@
         <p class="card-text ligther"><%= @property.address %></p>
         <h6 class="card-title bold">City:</h6>
         <p class="card-text ligther"><%= @property.city %></p>
-        <h6 class="card-title bold">State:</h6>
-        <p class="card-text ligther"><%= @property.state %></p>
-        <h6 class="card-title bold">Zip:</h6>
-        <p class="card-text ligther"><%= @property.zip_code %></p>
-        <h6 class="card-title bold">County:</h6>
-        <p class="card-text ligther"><%= @property.county %></p>
       </div>
     </div>
 
-    <div class="card card_space">
-      <div class="card-header">
-        Auction Info
-      </div>
-      <div class="card-body">
-        <h6 class="card-title bold">Owner Name:</h6>
-        <p class="card-text ligther"><%= @property.owner_name %></p>
-        <h6 class="card-title bold">Auction Type:</h6>
-        <p class="card-text ligther"><%= @property.auction_type %></p>
-        <h6 class="card-title bold">Auction Date:</h6>
-        <p class="card-text ligther"><%= @property.auction_date %></p>
-        <h6 class="card-title bold">Auction Amount:</h6>
-        <p class="card-text ligther"><%= @property.auction_amount %></p>
-        <h6 class="card-title bold">After Repair Value:</h6>
-        <p class="card-text ligther"><%= @property.arv %></p>
-      </div>
+    <div class="card-header">
+      Integrantes
     </div>
+    <% @property.members.each do |member| %>
+      <div class="card card_space">
+        <div class="card-body">
+          <h6 class="card-title bold">Nombre:</h6>
+          <p class="card-text ligther"><%= member.name %></p>
+          <h6 class="card-title bold">Ocupacion:</h6>
+          <p class="card-text ligther"><%= member.occupation %></p>
+          <h6 class="card-title bold">Identificacion:</h6>
+          <p class="card-text ligther"><%= member.identification %></p>
+          <h6 class="card-title bold">Edad:</h6>
+          <p class="card-text ligther"><%= member.age %></p>
+        </div>
+      </div>
+    <% end %>
 
-
-    <div class="card card_space">
-      <div class="card-header">
-        House Features
-      </div>
-      <div class="card-body">
-        <h6 class="card-title bold">Property type:</h6>
-        <p class="card-text ligther"><%= @property.property_type %></p>
-        <h6 class="card-title bold"># of Bedrooms:</h6>
-        <p class="card-text ligther"><%= @property.number_of_bedrooms %></p>
-        <h6 class="card-title bold"># of bathrooms:</h6>
-        <p class="card-text ligther"><%= @property.number_of_bathrooms %></p>
-        <h6 class="card-title bold">Home sqr footage:</h6>
-        <p class="card-text ligther"><%= @property.home_sqr_footage %></p>
-        <h6 class="card-title bold">Property sqr footage:</h6>
-        <p class="card-text ligther"><%= @property.property_sqr_footage %></p>
-      </div>
-    </div>
-
-    <div class="card card_space">
-      <div class="card-header">
-        Other Info
-      </div>
-      <div class="card-body">
-        <h6 class="card-title bold">Found By:</h6>
-        <p class="card-text ligther"><%= @property.found_by %></p>
-        <h6 class="card-title bold">Secondary Revision:</h6>
-        <p class="card-text ligther"><%= @property.secondary_revision %></p>
-        <h6 class="card-title bold">Type of loan:</h6>
-        <p class="card-text ligther"><%= @property.type_of_loan %></p>
-        <h6 class="card-title bold">Home status:</h6>
-        <p class="card-text ligther"><%= @property.home_status %></p>
-        <h6 class="card-title bold">Agent:</h6>
-        <p class="card-text ligther"><%= @property.agent %></p>
-        <h6 class="card-title bold">Review date:</h6>
-        <p class="card-text ligther"><%= @property.review_by_date %></p>
-        <h6 class="card-title bold">Urgent:</h6>
-        <p class="card-text ligther"><%= @property.urgent %></p>
-        <h6 class="card-title bold">Possible phone #:</h6>
-        <p class="card-text ligther"><%= @property.possible_phone_numbers %></p>
-        <h6 class="card-title bold">Possible addreses:</h6>
-        <p class="card-text ligther"><%= @property.possible_address %></p>
-      </div>
-    </div>
 
     <div class="card card_space">
       <div class="card-header">

@@ -1,8 +1,8 @@
 require 'csv'
 
 class Property < ApplicationRecord
-  has_many :debts
-  accepts_nested_attributes_for :debts
+  has_many :members
+  accepts_nested_attributes_for :members
   attr_accessor :p_profit
   has_many_attached :property
 
