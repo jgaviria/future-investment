@@ -9,12 +9,12 @@
         <%= link_to("Generar Excel", properties_path(format: :csv), class: "btn btn-success",) %>
       </div>
 
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for address...">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar direccion...">
 
       <table id="myTable">
         <tr class="header">
           <th></th>
-          <th>Address</th>
+          <th>Direccion</th>
           <th></th>
         </tr>
 
@@ -40,7 +40,7 @@
               <p id="hey"><%= property.city %>, <%= property.state %></p>
             </td>
             <td>
-              <%= link_to 'Show', property, :class => "btn btn-secondary btn-sm active" %>
+              <%= link_to 'Perfil', property, :class => "btn btn-secondary btn-sm active" %>
             </td>
           </tr>
         <% end %>

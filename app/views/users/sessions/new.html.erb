@@ -5,26 +5,28 @@
 <div class="body2">
   <div class="login-wrap body2">
     <div class="login-html body2">
-      <input id="tab-1" type="radio" name="tab" class="sign-in body2" checked><label for="tab-1" class="tab">Sign In</label>
+      <input id="tab-1" type="radio" name="tab" class="sign-in body2" checked><label for="tab-1" class="tab">Acceso</label>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
                       required:   false,
                       autofocus:  true,
+                      label: "Correo",
                       input_html: {autocomplete: "email"} %>
           <%= f.input :password,
                       required:   false,
+                      label: "Contraseña",
                       input_html: {autocomplete: "current-password"} %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: "Recordar?", as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Entrar" %>
         </div>
       <% end %>
       <div class="hr"></div>
       <div class="foot-lnk">
-        <a href="#forgot">Forgot Password?</a>
+        <a href="#forgot">Se te olvido la contraseña? menso....</a>
       </div>
     </div>
   </div>

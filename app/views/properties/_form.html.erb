@@ -3,7 +3,7 @@
     <div class="col-12 col-md-10 col-lg-8">
       <break></break>
       <div style="margin-top:50px;"></div>
-      <h4>New Property</h4>
+      <h4>Formulario</h4>
 
       <div style="margin-top:50px;"></div>
 
@@ -25,9 +25,9 @@
                 </div>
               <% end %>
 
-              <%= form.input :address, :input_html => {:value => @address} %>
+              <%= form.input :address, label: "direccion"   %>
 
-              <%= form.input :city, :input_html => {:value => @city} %>
+              <%= form.input :city, label: "ciudad" %>
 
 
               <div class="debts">
@@ -48,13 +48,13 @@
               </div>
 
               <div class="space_photos">
-                <%= form.input :urgent %>
+                <%= form.input :urgent, label: "Urgente?" %>
               </div>
 
-              <%= form.input :notes %>
+              <%= form.input :notes, label: "Notas" %>
 
               <%= form.button :submit, "Crear", class: "btn-primary" %>
-              <%= form.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+              <%= form.button :button, "Cancelar", type: "reset", class: "btn-outline-secondary" %>
             <% end %>
           </div>
         </div>
