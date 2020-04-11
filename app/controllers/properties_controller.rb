@@ -109,7 +109,7 @@ class PropertiesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def property_params
-    params.require(:property).permit(:address, :city, :notes,  :urgent, :archive, :property, :created_by, :members_attributes => [:id, :name, :occupation, :identification, :age])
+    params.require(:property).permit(:address, :city, :notes,  :urgent, :archive, :property, :created_by, :members_attributes => [:id, :name, :occupation, :identification, :age, :phone_number])
   end
 
   def show_csv
