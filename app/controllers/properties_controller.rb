@@ -37,11 +37,13 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
+    @nickname = User.find(@property.created_by).nickname
   end
 
   # GET /properties/new
   def new()
     @property = Property.new
+    @nickname = current_user.id
   end
 
   # GET /properties/1/edit
@@ -107,7 +109,7 @@ class PropertiesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def property_params
-    params.require(:property).permit(:address, :city, :notes,  :urgent, :archive, :property, :members_attributes => [:id, :name, :occupation, :identification, :age])
+    params.require(:property).permit(:address, :city, :notes,  :urgent, :archive, :property, :created_by, :members_attributes => [:id, :name, :occupation, :identification, :age])
   end
 
   def show_csv

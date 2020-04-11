@@ -53,6 +53,8 @@
 
               <%= form.input :notes, label: "Notas" %>
 
+              <%= form.hidden_field :created_by, value: @nickname %>
+
               <%= form.button :submit, "Crear", class: "btn-primary" %>
               <%= form.button :button, "Cancelar", type: "reset", class: "btn-outline-secondary" %>
             <% end %>

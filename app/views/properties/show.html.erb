@@ -2,12 +2,12 @@
   <div class="col-sm-5">
     <div class="card card_space">
       <div class="card-header">
-        Location Info
+        Localidad
       </div>
       <div class="card-body">
-        <h6 class="card-title bold">Address:</h6>
+        <h6 class="card-title bold">Direccion:</h6>
         <p class="card-text ligther"><%= @property.address %></p>
-        <h6 class="card-title bold">City:</h6>
+        <h6 class="card-title bold">Ciudad:</h6>
         <p class="card-text ligther"><%= @property.city %></p>
       </div>
     </div>
@@ -33,12 +33,22 @@
 
     <div class="card card_space">
       <div class="card-header">
-        Notes
+        Notas
       </div>
       <div class="card-body">
         <p class="card-text ligther"><%= @property.notes %></p>
       </div>
     </div>
+
+    <div class="card card_space">
+      <div class="card-header">
+        Creado por:
+      </div>
+      <div class="card-body">
+        <p class="card-text ligther"><%= @nickname %></p>
+      </div>
+    </div>
+
   </div>
 
 
