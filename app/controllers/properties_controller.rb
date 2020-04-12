@@ -37,13 +37,14 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @nickname = User.find(@property.created_by).nickname
+    property = Property.find(params["id"])
+    id = property&.created_by
+    @nickname = User.find(id)&.nickname
   end
 
   # GET /properties/new
   def new()
     @property = Property.new
-    @nickname = current_user.id
   end
 
   # GET /properties/1/edit
@@ -54,7 +55,7 @@ class PropertiesController < ApplicationController
   # POST /properties.json
   def create
     @property = Property.new(property_params)
-
+    @property.created_by = current_user&.id
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
