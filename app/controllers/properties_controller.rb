@@ -112,13 +112,5 @@ class PropertiesController < ApplicationController
     params.require(:property).permit(:address, :city, :notes,  :urgent, :archive, :property, :created_by, :members_attributes => [:id, :name, :occupation, :identification, :age, :phone_number])
   end
 
-  def show_csv
-    csv = []
-    csv << ["id", "address", "county"]
-    Property.all.each do |p|
-      csv << [p.id, p.address, p.county]
-    end
-  end
-
 end
 

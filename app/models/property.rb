@@ -7,13 +7,17 @@ class Property < ApplicationRecord
   has_many_attached :property
 
   def self.to_csv
-    attributes = %w{id auction_date county address owner_name property_type number_of_bedrooms number_of_bathrooms home_sqr_footage auction_amount arv notes}
-
+    attributes_property = %w{id address city notes}
+    attributes_member   = %w{name phone_number}
+    headers             = attributes_property + attributes_member
     CSV.generate(headers: true) do |csv|
-      csv << attributes
+      csv << headers
 
-      all.each do |user|
-        csv << attributes.map { |attr| user.send(attr) }
+      Property.order(:city).each do |property|
+        a =  attributes_property.map { |attr| property.send(attr) }
+        b = attributes_member.map { |attr| property&.members&.first&.send(attr)}
+
+        csv << a + b
       end
     end
   end
