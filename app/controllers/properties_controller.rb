@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.where(archive: false).order(urgent: :desc).order(auction_date: :asc)
+    @properties = Property.where(archive: false).order(created_at: :desc)
 
     respond_to do |format|
       format.html
@@ -21,7 +21,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def archives
-    @archived_properties = Property.where(archive: true)
+    @archived_properties = Property.where(archive: true).order(updated_at: :desc)
   end
 
   # GET /properties
