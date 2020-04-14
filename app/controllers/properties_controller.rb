@@ -27,7 +27,9 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def archive
-    if @property.update(archive: true)
+    user = User.find(current_user.id)
+    return unless user
+    if @property.update(archive: true, archived_by: user.nickname)
       redirect_to properties_path, notice: 'Property was successfully archived.'
     else
       raise 'damn something happened'

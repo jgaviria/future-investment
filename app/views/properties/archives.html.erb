@@ -13,6 +13,7 @@
           <th style="width:7%;">ID</th>
           <th>Direccion</th>
           <th>Cedula</th>
+          <th>Archivado Por</th>
           <th style="width:15%;"></th>
         </tr>
 
@@ -21,6 +22,7 @@
             <td><%= property.id %></td>
             <td><%= property.address %></td>
             <td><%= property&.members&.first&.identification %></td>
+            <td><%= property&.archived_by%> (<%= property&.updated_at.strftime("%Y-%m-%d")%>)</td>
             <td style='white-space: nowrap'>
               <%= link_to 'Perfil', property, :class => "btn btn-secondary btn-sm active" %>
               <%= link_to('Activar', activate_property_path(id: property.id), method: :post, :class => "btn btn-primary btn-sm active") %>
