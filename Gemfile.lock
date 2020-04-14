@@ -896,8 +896,10 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    geocoder (1.6.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     http (4.1.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -1072,6 +1074,8 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-rails
+  geocoder
+  gmaps4rails
   http
   jbuilder (~> 2.5)
   jquery-rails

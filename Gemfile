@@ -93,3 +93,9 @@ gem 'aws-sdk'
 gem 'font-awesome-rails'
 
 gem 'http'
+
+# Google maps
+gem 'gmaps4rails'
+
+# Install Geocoder
+gem 'geocoder'

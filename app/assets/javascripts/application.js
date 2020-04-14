@@ -19,4 +19,6 @@
 //= require turbolinks
 //= require bootstrap-table/bootstrap-table
 //= require cocoon
+//= require underscore
+//= require gmaps/google
 //= require_tree .

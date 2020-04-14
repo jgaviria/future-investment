@@ -30,6 +30,9 @@
         <li class="nav-item">
           <a class="nav-link" <%= link_to 'Archivos', archives_path %> </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'Mapa', maps_path, 'data-no-turbolink' => true %> </a>
+        </li>
       </ul>
 
       <ul class="navbar-nav">
@@ -37,7 +40,6 @@
           <% if user_signed_in? %>
             <a class="nav-link"<%= link_to "Salir", destroy_user_session_path, method: :delete %></a>
           <% else %>
-            <a class="nav-link" <%= link_to "Crear Cuenta", new_user_registration_path %> </a>
             <a class="nav-link" <%= link_to "Entrar", new_user_session_path %> </a>
           <% end %>
           </ul>

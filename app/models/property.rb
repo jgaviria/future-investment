@@ -1,10 +1,18 @@
 require 'csv'
+require 'geocoder'
 
 class Property < ApplicationRecord
   has_many :members
   accepts_nested_attributes_for :members
   attr_accessor :p_profit
   has_many_attached :property
+
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    "Antioquia, #{self.city}"
+  end
 
   def self.to_csv
     attributes_property = %w{id address city notes}

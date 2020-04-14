@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # Custom route for archives
   get 'archives', action: :archives, controller: 'properties'
 
+  # Custom route for archives
+  get 'maps', action: :maps, controller: 'properties'
+
   resources :properties do
     member do
       post :archive

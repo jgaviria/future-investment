@@ -102,6 +102,15 @@ class PropertiesController < ApplicationController
     end
   end
 
+  # Moves properties back to an active state
+  def maps
+    @properties = Property.all
+    @hash = Gmaps4rails.build_markers(@properties) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude + user.id.to_f / 100000
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
