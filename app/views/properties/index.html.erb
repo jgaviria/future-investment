@@ -6,10 +6,12 @@
       <div style="margin-top:50px;"></div>
 
       <div class="right">
-        <%= link_to("Generar Excel", properties_path(format: :csv), class: "btn btn-success",) %>
+        <button class="btn btn-primary" onclick="exportTableToCSV('members.csv')">
+          Exportar Excel
+        </button>
       </div>
 
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar direccion...">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar por direccion (presionar exportar para crear documento)">
 
       <table id="myTable">
         <tr class="header">
@@ -23,17 +25,16 @@
         <% @properties.each do |property| %>
           <tr>
             <% if property.property.present? %>
-              <td>
+              <td id="test">
                 <%= image_tag property.property.first, height: "90", width: "120" %>
               </td>
             <% else %>
-              <td>
+              <td id="test">
                 <%= image_tag 'no_pic.png', height: "90", width: "120" %>
               </td>
             <% end %>
             <td>
-              <%= property.address %> <br/>
-              <p id="hey"><%= property.city %>, <%= property.state %></p>
+              <%= property.address %>, <%= property.city %>
             </td>
             <td>
               <%= property.members&.first&.name %>
@@ -41,7 +42,7 @@
             <td>
               <%= property.members&.first&.identification %>
             </td>
-            <td>
+            <td id="test">
               <%= link_to 'Perfil', property, :class => "btn btn-secondary btn-sm active" %>
               <%= link_to('Archivar', archive_property_path(id: property.id), method: :post, :class => "btn btn-secondary btn-sm  btn-warning") %>
             </td>
@@ -69,10 +70,59 @@
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
+                    tr[i].id = "";
                 } else {
                     tr[i].style.display = "none";
+                    tr[i].id = "test";
                 }
             }
         }
     }
+</script>
+
+
+<script>
+    function exportTableToCSV(filename) {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr:not([id*='test'])");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll('td:not([id*="test"])');
+
+            for (var j = 0; j < cols.length; j++)
+                row.push(cols[j].innerText);
+
+            csv.push(row.join(","));
+        }
+
+        // Download CSV file
+        downloadCSV(csv.join("\n"), filename);
+    }
+
+    function downloadCSV(csv, filename) {
+        var csvFile;
+        var downloadLink;
+
+        // CSV file
+        csvFile = new Blob([csv], {type: "text/csv"});
+
+        // Download link
+        downloadLink = document.createElement("a");
+
+        // File name
+        downloadLink.download = filename;
+
+        // Create a link to the file
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+
+        // Hide download link
+        downloadLink.style.display = "none";
+
+        // Add the link to DOM
+        document.body.appendChild(downloadLink);
+
+        // Click download link
+        downloadLink.click();
+    }
+
 </script>
