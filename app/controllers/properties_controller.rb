@@ -106,8 +106,8 @@ class PropertiesController < ApplicationController
   def maps
     @properties = Property.where(archive: false)
     @hash = Gmaps4rails.build_markers(@properties) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude + user.id.to_f / 100000
+      marker.lat user&.latitude
+      marker.lng user&.longitude + user.id.to_f / 100000
     end
   end
 
