@@ -18,7 +18,7 @@
           <th></th>
           <th>Direccion</th>
           <th>Nombre</th>
-          <th>Cedula</th>
+          <th>Telefono</th>
           <th></th>
         </tr>
 
@@ -40,7 +40,7 @@
               <%= property.members&.first&.name %>
             </td>
             <td>
-              <%= property.members&.first&.identification %>
+              <%= property.members&.first&.phone_number %>
             </td>
             <td id="test">
               <%= link_to 'Perfil', property, :class => "btn btn-secondary btn-sm active" %>
@@ -85,6 +85,7 @@
     function exportTableToCSV(filename) {
         var csv = [];
         var rows = document.querySelectorAll("table tr:not([id*='test'])");
+        csv.push("Direccion, Barrio/Ciudad, Nombre, Telefono")
 
         for (var i = 0; i < rows.length; i++) {
             var row = [], cols = rows[i].querySelectorAll('td:not([id*="test"])');
