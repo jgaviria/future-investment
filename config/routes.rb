@@ -25,4 +25,6 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
 
+  get 'basic-qr-code-reader', to: 'basic_qr_codes#index'
+
 end

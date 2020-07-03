@@ -99,3 +99,5 @@ gem 'gmaps4rails'
 
 # Install Geocoder
 gem 'geocoder'
+
+gem 'webpacker', github: 'rails/webpacker'
